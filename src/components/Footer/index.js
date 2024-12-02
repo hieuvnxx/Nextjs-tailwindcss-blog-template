@@ -11,7 +11,12 @@ const Footer = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = (data) => {
+    alert(`Thank you for subscribing to our newsletter! Email Address: ${data.email}`);
+    console.log(data);
+  };
+
   console.log(errors);
 
   return (
@@ -32,7 +37,7 @@ const Footer = () => {
           type="email"
           placeholder="Enter your email"
           {...register("email", { required: true, maxLength: 80 })}
-          className="w-full bg-transparent pl-2 sm:pl-0 text-dark focus:border-dark focus:ring-0 border-0 border-b mr-2 pb-1"
+          className="w-full bg-transparent pl-2 sm:pl-0 text-white focus:border-dark focus:ring-0 border-0 border-b mr-2 pb-1"
         />
 
         <input
@@ -40,7 +45,7 @@ const Footer = () => {
           className="bg-dark text-light dark:text-dark dark:bg-light cursor-pointer font-medium rounded px-3 sm:px-5 py-1"
         />
       </form>
-      <div className="flex items-center mt-8">
+      <div className="flex items-center mt-8 mb-16">
         <a
           href={siteMetadata.linkedin}
           className="inline-block w-6 h-6 mr-4"
@@ -50,7 +55,7 @@ const Footer = () => {
         >
           <LinkedinIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
-        <a
+        {/* <a
           href={siteMetadata.twitter}
           className="inline-block w-6 h-6 mr-4"
           aria-label="Reach out to me via Twitter"
@@ -58,7 +63,7 @@ const Footer = () => {
           rel="noopener noreferrer"
         >
           <TwitterIcon className="hover:scale-125 transition-all ease duration-200" />
-        </a>
+        </a> */}
         <a
           href={siteMetadata.github}
           className="inline-block w-6 h-6 mr-4 fill-light"
@@ -68,7 +73,7 @@ const Footer = () => {
         >
           <GithubIcon className="fill-light dark:fill-dark  hover:scale-125 transition-all ease duration-200" />
         </a>
-        <a
+        {/* <a
           href={siteMetadata.dribbble}
           className="inline-block w-6 h-6 mr-4"
           aria-label="Check my profile on Dribbble"
@@ -76,12 +81,12 @@ const Footer = () => {
           rel="noopener noreferrer"
         >
           <DribbbleIcon className="hover:scale-125 transition-all ease duration-200" />
-        </a>
+        </a> */}
       </div>
 
-      <div className="w-full  mt-16 md:mt-24 relative font-medium border-t border-solid border-light py-6 px-8 flex  flex-col md:flex-row items-center justify-between">
+      {/* <div className="w-full  mt-16 md:mt-24 relative font-medium border-t border-solid border-light py-6 px-8 flex  flex-col md:flex-row items-center justify-between">
         <span className="text-center">
-          &copy;2023 CodeBucks. All rights reserved.
+          &copy;2024 Hieuvnlabs. All rights reserved.
         </span>
         <Link
           href="/sitemap.xml"
@@ -91,11 +96,11 @@ const Footer = () => {
         </Link>
         <div className="text-center">
           Made with &hearts; by{" "}
-          <a href="https://devdreaming.com" className="underline" target="_blank">
-            CodeBucks
+          <a href="#" className="underline" target="_blank">
+            Hieuvnlabs
           </a>
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 };
